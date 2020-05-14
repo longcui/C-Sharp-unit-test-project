@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+//https://docs.microsoft.com/en-us/dotnet/csharp/discards
 public class Example
 {
     public static void Main()
