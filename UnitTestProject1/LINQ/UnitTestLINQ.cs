@@ -36,7 +36,13 @@ namespace UnitTestProject1
             Assert.AreEqual(2, enumerable.Take(2).Count()); 
             Assert.AreEqual(0, enumerable.Take(0).Count()); 
             Assert.AreEqual(3, enumerable.Take(5).Count()); 
+        }
 
+        [TestMethod]
+        public void TestLINQProcessing() {
+            var phrase = "the quick brown fox jumps over the lazy dog";
+            IEnumerable<int> enumerable = from word in phrase.Split(" ") select word.Length;
+            Assert.AreEqual(3, (int)enumerable.Average());
         }
     }
 }

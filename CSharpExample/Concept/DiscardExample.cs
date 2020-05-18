@@ -14,7 +14,7 @@ public class Example
     private static (string, double, int, int, int, int) QueryCityDataForYears(string name, int year1, int year2)
     {
         int population1 = 0, population2 = 0;
-        double area = 0;
+        double area;
 
         if (name == "New York City")
         {
