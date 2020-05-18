@@ -6,18 +6,18 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UnitTestProject1
 {
     [TestClass]
-    public class UnitTestLINQ
+    public class LINQTest
     {
 
-        static readonly string[] Names = new string[3] {"Alice", "Bob", "Celina"};
+        static readonly string[] Names = new string[3] { "Alice", "Bob", "Celina" };
 
 
         [TestMethod]
         public void TestMethod1()
         {
             IEnumerable<string> linqQuery = from name in Names
-                where  name.StartsWith('A')
-                select name;
+                                            where name.StartsWith('A')
+                                            select name;
 
             Assert.AreEqual(1, linqQuery.Count());
             foreach (string name in linqQuery)
@@ -31,18 +31,21 @@ namespace UnitTestProject1
         public void TestTake()
         {
             IEnumerable<string> enumerable = from name in Names
-                select name;
-            
-            Assert.AreEqual(2, enumerable.Take(2).Count()); 
-            Assert.AreEqual(0, enumerable.Take(0).Count()); 
-            Assert.AreEqual(3, enumerable.Take(5).Count()); 
+                                             select name;
+
+            Assert.AreEqual(2, enumerable.Take(2).Count());
+            Assert.AreEqual(0, enumerable.Take(0).Count());
+            Assert.AreEqual(3, enumerable.Take(5).Count());
         }
 
         [TestMethod]
-        public void TestLINQProcessing() {
+        public void TestLINQProcessing()
+        {
             var phrase = "the quick brown fox jumps over the lazy dog";
             IEnumerable<int> enumerable = from word in phrase.Split(" ") select word.Length;
             Assert.AreEqual(3, (int)enumerable.Average());
         }
+
+
     }
 }
