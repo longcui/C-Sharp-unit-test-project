@@ -9,7 +9,7 @@ namespace UnitTest.LINQ
     [TestClass]
     public class GroupByLINQTest : LINQTest
     {
-        IList<Student> studentList = new List<Student>()
+        readonly IList<Student> studentList = new List<Student>()
             {
                 new Student() { StudentID = 1, StudentName = "John", Age = 18 },
                 new Student() { StudentID = 2, StudentName = "Steve", Age = 21 },
