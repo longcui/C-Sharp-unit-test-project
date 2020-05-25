@@ -6,10 +6,10 @@ using System.Text;
 namespace UnitTest.Concept
 {
     [TestClass]
-    public class NameOfTest
+    public class NameofTest
     {
         [TestMethod]
-        public void TestNameOf() {
+        public void TestNameof() {
             Assert.AreEqual("String", nameof(System.String));
 
             int i = 4;
