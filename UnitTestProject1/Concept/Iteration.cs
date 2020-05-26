@@ -15,6 +15,7 @@ namespace UnitTest.Concept
             //below could NOT compile
             //Assert.AreEqual(40, numbers[0] + numbers[indexable.Count - 1]);
 
+            //"as" could produce null.
             IList<int> indexable = numbers as IList<int>;
             //Need to compare the result of the as expression with null to check if the conversion is successful
             if (indexable != null) { 

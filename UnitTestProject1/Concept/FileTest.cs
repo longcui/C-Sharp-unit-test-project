@@ -20,7 +20,7 @@ namespace UnitTest.Concept
         }
 
         [TestMethod]
-        public void GetDirectory() {
+        public void GetCurrentDirectory() {
             //same Result for below. eg: C:\Users\longc\source\repos\UnitTestProject1\UnitTestProject1\bin\Debug\netcoreapp3.1
             Console.WriteLine(Directory.GetCurrentDirectory());
             Console.WriteLine(Environment.CurrentDirectory);

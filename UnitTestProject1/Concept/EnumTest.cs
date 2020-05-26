@@ -52,22 +52,19 @@ namespace UnitTest.Concept
         [TestMethod]
         public void TestTryParse() {
             ///Return Object
-            Object result = null;
-            Enum.TryParse(typeof(Colors), "red", true, out result);
+            Enum.TryParse(typeof(Colors), "red", true, out object result);      //out variable could be inlined
             Assert.AreEqual(Colors.Red, (Colors)result);
 
-            result = null;
             Enum.TryParse(typeof(Colors), "BAD_VALUE", out result);     //return default value of Object which is null.
             Assert.AreEqual(null, result);
 
             ///Return Domain type
-            SimpleColors result2;
-            Enum.TryParse("red", true, out result2);
+            Enum.TryParse("red", true, out SimpleColors result2);
             Assert.AreEqual(SimpleColors.Red, result2);
 
             // If parsing fails(return false), the result will be default.
             //Enum could not be Null.
-            result2 = default;
+            result2 = default;      //redundant
             Enum.TryParse("BAD_VALUE", out result2);
             Assert.AreEqual(SimpleColors.NotAvailable, result2);
 

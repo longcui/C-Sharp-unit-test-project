@@ -10,7 +10,7 @@ namespace UnitTest.Concept
     {
         [TestMethod]
         public void TestNameof() {
-            Assert.AreEqual("String", nameof(System.String));
+            Assert.AreEqual("String", nameof(String));
 
             int i = 4;
             Assert.AreEqual("i", nameof(i));
