@@ -15,7 +15,7 @@ namespace UnitTest.Concept
             Assert.AreEqual("HELLO", greeting.ToUpper());
             Assert.AreEqual("hello", greeting.ToLower());
 
-            //string interpotation
+            //string interpolation
             string firstName = "John";
             string lastName = "Doe";
             Assert.AreEqual("JohnDoe", String.Concat(firstName, lastName));
