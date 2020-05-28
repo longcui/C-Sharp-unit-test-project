@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 //https://docs.microsoft.com/en-us/dotnet/csharp/discards
 public class Example
@@ -8,7 +9,9 @@ public class Example
     {
         var (_, _, _, pop1, _, pop2) = QueryCityDataForYears("New York City", 1960, 2010);
 
-        Console.WriteLine($"Population change, 1960 to 2010: {pop2 - pop1:N0}");
+        Console.WriteLine($"Population change, 1960 to 2010: {pop2 - pop1:N0}");    //shows only in black console.
+        Debug.Print("This will be written to Output only if in Debug mode.");
+        Trace.WriteLine("This will be written to Output all the time.");
     }
 
     private static (string, double, int, int, int, int) QueryCityDataForYears(string name, int year1, int year2)
