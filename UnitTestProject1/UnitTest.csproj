@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CSharpExample\CSharpMain.csproj" />
+    <ProjectReference Include="..\EntityFrameworkCoreExample\EntityFrameworkCoreExample.csproj" />
   </ItemGroup>
 
 </Project>
