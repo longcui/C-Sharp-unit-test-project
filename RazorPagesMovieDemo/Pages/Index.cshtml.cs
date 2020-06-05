@@ -4,22 +4,26 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using RazorPagesMovieDemo.Data;
+using RazorPagesMovieDemo.Models;
 
 namespace RazorPagesMovieDemo.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly RazorPagesMovieDemo.Data.RazorPagesMovieDemoContext _context;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(RazorPagesMovieDemo.Data.RazorPagesMovieDemoContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public void OnGet()
-        {
+        public IList<Movie> Movie { get;set; }
 
+        public async Task OnGetAsync()
+        {
+            Movie = await _context.Movie.ToListAsync();
         }
     }
 }
