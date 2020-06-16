@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace UnitTest.Concept.Threading
 {
+    /// <summary>
+    /// To be continued
+    /// </summary>
     [TestClass]
     public class ThreadingExample
     {

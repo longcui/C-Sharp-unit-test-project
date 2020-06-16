@@ -34,5 +34,10 @@ namespace UnitTest.Concept
                 Console.WriteLine(car);
             }
         }
+
+        [TestMethod]
+        public void TestAtSign() {
+            Assert.AreEqual("\"a\"", @"""a""");
+        }
     }
 }

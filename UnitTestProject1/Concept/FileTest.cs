@@ -32,7 +32,7 @@ namespace UnitTest.Concept
             Assembly assembly = Assembly.GetExecutingAssembly();
             string[] resourceNames = assembly.GetManifestResourceNames();
             Console.WriteLine(String.Join("\n", resourceNames));
-            Assert.IsTrue(resourceNames.Length > 0);
+            Assert.IsTrue(resourceNames.Length == 1);
             Assert.AreEqual("UnitTest.Resources.MOCK_PERSON_DATA.csv", resourceNames[0]);
 
             Stream stream = assembly.GetManifestResourceStream(resourceNames[0]);
